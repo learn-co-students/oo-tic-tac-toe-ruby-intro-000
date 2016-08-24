@@ -69,7 +69,7 @@ def turn
   puts "invalid"
   input = gets.strip
   index = input_to_index(input)
-  elsif valid_move?(index)
+  elsif valid_move?(index) == true
     move(index, current_player)
     display_board
   else

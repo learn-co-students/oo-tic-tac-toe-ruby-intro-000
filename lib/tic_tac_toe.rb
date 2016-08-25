@@ -6,10 +6,6 @@ def initialize
   @board = Array.new(9, " ")
 end
 
-def index(input)
-index = input.to_i - 1
-end
-
 def display_board
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
@@ -18,40 +14,44 @@ def display_board
   puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
 end
 
-def full?
-  @board.all?{|token| token == "X" || token == "O"}
+def move(input, current_player = "X")
+  @board[input.to_i-1] = current_player
 end
 
-def draw?
-!won? && full?
+def position_taken?(input)
+if @board[input] == " " || @board[input] == nil || @board[input] ==""
+  return false
+elsif @board[input] == "X"
+  return true
+elsif @board[input] == "O"
+  return true
+else
+  return false
+end
 end
 
-def over?
-  if won? || draw?
-    true
-  else
-    false
-  end
-end
-
-def position_taken?(index)
-  if @board[index] == " "
-    false
-  else
-    true
-  end
-end
-
-def valid_move?(index)
-  if position_taken?(index) == false && index.between?(0,8)
+def valid_move?(input)
+  input = input.to_i - 1
+  if position_taken?(input) == false && input.between?(0,8) == true
   return true
   else
   return false
   end
 end
 
-def input_to_index(input)
-  index = input.to_i - 1
+def turn
+  input = gets.strip
+  if valid_move?(input) != true
+     puts "invalid"
+     gets.strip
+  else
+    move(input, current_player)
+    display_board
+end
+end
+
+def turn_count
+  @board.count{|token| token == "X" || token == "O"}
 end
 
 def current_player
@@ -60,28 +60,6 @@ def current_player
   else
   value = "O"
   end
-end
-
-def turn
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(index) == false
-  puts "invalid"
-  input = gets.strip
-  index = input_to_index(input)
-  elsif valid_move?(index) == true
-    move(index, current_player)
-    display_board
-  else
-  end
-end
-
-def move(index, current_player)
-  @board[index] = current_player
-end
-
-def turn_count
-  @board.count{|token| token == "X" || token == "O"}
 end
 
 def won?
@@ -126,11 +104,27 @@ def winner
   end
 end
 
+def full?
+  @board.all?{|token| token == "X" || token == "O"}
+end
+
+def draw?
+!won? && full?
+end
+
+def over?
+  if won? || draw?
+    true
+  else
+    false
+  end
+end
+
 def play
-num_of_turns = 0
-  until num_of_turns == 9 || over? == true
+counter = 0
+  until counter == 9 || over? == true
     turn
-    num_of_turns += 1
+    counter += 1
   end
       if over? == true && won? == "X"
         puts "Congratulations X!"

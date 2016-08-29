@@ -1,5 +1,7 @@
 class TicTacToe
 
+  attr_accessor :board
+
   WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
@@ -16,15 +18,14 @@ class TicTacToe
   end
 
   def display_board
-    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+    puts " #{board[0]} | #{board[1]} | #{board[2]} "
     puts "-----------"
-    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+    puts " #{board[3]} | #{board[4]} | #{board[5]} "
     puts "-----------"
-    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+    puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
 
   def turn
-    #display_board
     puts "Please enter 1-9:"
     input = gets.strip
     if !valid_move?(input)
@@ -85,6 +86,7 @@ class TicTacToe
   end
 
   def play
+    display_board
     while !over?
       turn
     end

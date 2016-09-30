@@ -93,7 +93,7 @@ def over?
 end
 
 def winner
-  won?
+  won? || nil
 end
 
 # Define your play method below

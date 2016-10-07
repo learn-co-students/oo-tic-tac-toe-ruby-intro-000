@@ -35,13 +35,12 @@ class TicTacToe
     end
   end
 
-  def valid_move?(position)
-
-    position = position.to_i - 1
-    if position_taken?(position) || (position > 8) || (position < 0)
-      return false
-    else
+  def valid_move?(index)
+    index = index.to_i - 1
+    if (position_taken?(index) == false) && (index <= 8) && (index >= 0)
       return true
+    elsif position_taken?(index) || (index > 8) || (index < 0)
+      return false
     end
   end
 
@@ -53,7 +52,7 @@ class TicTacToe
     index = input_to_index(input)
 
     if valid_move?(input)
-      move(input_to_index(index), current_player)
+      move(input_to_index(input), current_player)
     else
       turn
     end

@@ -98,5 +98,17 @@ turns = turn_count
      end
    end
 
+   def play
+     until over?
+     turn
+     end
+     if won?
+       puts "Congratulations #{winner}!"
+     elsif draw?
+       puts "Cats Game!"
+     end
+   end
+
+
 
 end

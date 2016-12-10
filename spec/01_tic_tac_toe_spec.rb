@@ -78,7 +78,7 @@ describe './lib/tic_tac_toe.rb' do
 
         board = game.instance_variable_get(:@board)
 
-        expect(board).to eq(["X", " ", " ", " ", "O", " ", " ", " ", " "])
+        expect(board).to eq([" ", "X", " ", " ", " ", "O", " ", " ", " "])
       end
     end
 

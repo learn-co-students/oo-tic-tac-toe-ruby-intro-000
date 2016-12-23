@@ -1,5 +1,5 @@
 require_relative '../lib/tic_tac_toe.rb'
-
+require 'pry'
 describe './lib/tic_tac_toe.rb' do
   describe TicTacToe do
     describe '#initialize' do
@@ -166,6 +166,7 @@ describe './lib/tic_tac_toe.rb' do
       end
 
       it "calls #input_to_index, #valid_move?, and #current_player" do
+        #binding.pry
         allow($stdout).to receive(:puts)
         expect(game).to receive(:gets).and_return("5")
         expect(game).to receive(:input_to_index).and_return(4)
@@ -210,7 +211,7 @@ describe './lib/tic_tac_toe.rb' do
         game = TicTacToe.new
         board = ["X", "O", "X", "O", "X", "O", "O", "X", "X"]
         game.instance_variable_set(:@board, board)
-
+        binding.pry
         expect(game.won?).to contain_exactly(0,4,8)
       end
     end

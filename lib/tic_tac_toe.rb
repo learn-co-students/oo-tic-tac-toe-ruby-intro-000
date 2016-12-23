@@ -55,7 +55,7 @@ class TicTacToe
       win_brd = Array.new
       win_combination.each do |i|
         win_brd << @board[i]
-        binding.pry
+        #binding.pry - needed the return to be ouside the WIN_COMBINATIONS.each
         if win_brd.size == 3 && (win_brd.all? { |e| e == "O"  } || win_brd.all? { |e| e == "X"  })
           return win_combination
         end
@@ -63,5 +63,27 @@ class TicTacToe
     end #close WIN_COMBINATIONS.each
     return false
   end #close won?
+  def full?
+    @board.none? { |e| e == " "  }
+  end
+  def draw?
+    if full? && !(won?)
+      return true
+    elsif won?
+      return false
+    else
+      return false
+    end
+
+  end
+  def over?
+    (won? || full?) ? true : false
+  end
+  def winner
+    if over?
+      winning_player = won?[0]
+      @board[winning_player]   
+    end
+  end
 
 end #close TicTacToe class

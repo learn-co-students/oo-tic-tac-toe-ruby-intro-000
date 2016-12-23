@@ -211,7 +211,7 @@ describe './lib/tic_tac_toe.rb' do
         game = TicTacToe.new
         board = ["X", "O", "X", "O", "X", "O", "O", "X", "X"]
         game.instance_variable_set(:@board, board)
-        binding.pry
+        #binding.pry - WIN_COMBINATIONS.each prob
         expect(game.won?).to contain_exactly(0,4,8)
       end
     end

@@ -43,10 +43,10 @@ class TicTacToe
     puts "Pick a position 1-9: "
     input = gets.strip
     index = input_to_index(input)
-    if valid_move?(index)
-      move(index, current_player)
+    if valid_move?(@index)
+      move(@index, current_player)
       display_board
-    else
+    elsif !(draw? || won?)
       turn
     end
   end
@@ -82,8 +82,20 @@ class TicTacToe
   def winner
     if over?
       winning_player = won?[0]
-      @board[winning_player]   
+      @board[winning_player]
     end
   end
+  def play
+    until over? do
+      binding.pry
+      turn
+      if won?
+        puts "Congratulations " + winner
+      elsif draw?
+        puts "Cats Game."
+      end
+    end
+  end
+
 
 end #close TicTacToe class

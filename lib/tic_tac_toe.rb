@@ -60,8 +60,8 @@ class TicTacToe
           return win_combination
         end
       end #close win_combination.each
-    return nil
-    end #close WIN_COMBINATIONS.each 
-  end #close won?   
-      
+    end #close WIN_COMBINATIONS.each
+    return false
+  end #close won?
+
 end #close TicTacToe class

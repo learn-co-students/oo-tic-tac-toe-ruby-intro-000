@@ -55,7 +55,7 @@ describe './lib/tic_tac_toe.rb' do
         allow(game).to receive(:winner).and_return("X")
 
         expect(game).to receive(:won?).at_least(:twice).and_return(false, false, true)
-        binding.pry
+
         game.play
       end
 
@@ -63,7 +63,7 @@ describe './lib/tic_tac_toe.rb' do
         game = TicTacToe.new
         allow($stdout).to receive(:puts)
         allow(game).to receive(:gets).and_return("1", "2", "3")
-        binding.pry
+
         expect(game).to receive(:draw?).at_least(:twice).and_return(false, false, true)
 
         game.play

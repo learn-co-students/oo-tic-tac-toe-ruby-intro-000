@@ -24,7 +24,6 @@ class TicTacToe
     @index = user_input.to_i - 1
   end
   def move(index, player = "X")
-    #binding.pry
     @board[index]=player
   end
   def position_taken?(index)
@@ -87,7 +86,6 @@ class TicTacToe
   end
   def play
     until over? do
-      binding.pry
       turn
       if won?
         puts "Congratulations " + winner

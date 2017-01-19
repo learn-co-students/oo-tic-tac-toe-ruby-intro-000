@@ -1,4 +1,4 @@
-# to run this, enter ./bin/tictactoe into command line
+# from Learn IDE, enter ./bin/tictactoe into command line to run this program.
 
 class TicTacToe
   def initialize
@@ -15,7 +15,7 @@ class TicTacToe
     [0, 4, 8],
     [2, 4, 6]
   ]
-  def display_board   # draws an empty display board
+  def display_board   # draws the display board, plugging in board arr elements.
       puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
       puts "-----------"
       puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "

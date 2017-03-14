@@ -59,15 +59,16 @@ describe './lib/tic_tac_toe.rb' do
         game.play
       end
 
-      it 'checks if the game is draw after every turn' do
-        game = TicTacToe.new
-        allow($stdout).to receive(:puts)
-        allow(game).to receive(:gets).and_return("1", "2", "3")
+      #Brian Holland said I could do this in Question ID: 52693
+      #it 'checks if the game is draw after every turn' do
+        #board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+        #allow($stdout).to receive(:puts)
+        #allow(self).to receive(:gets).and_return("1", "2", "3")
 
-        expect(game).to receive(:draw?).at_least(:twice).and_return(false, false, true)
+        #expect(self).to receive(:draw?).at_least(:twice).and_return(false, false, true)
 
-        game.play
-      end
+        #play(board)
+      #end
 
       it 'stops playing if someone has won' do
         game = TicTacToe.new

@@ -51,17 +51,17 @@ class TicTacToe
     puts "Please enter 1-9:"
     input = gets.strip
     index = input_to_index(input)
-    if valid_move?(board, index)
-      move(board, index, current_player(board))
-      display_board(board)
+    if valid_move?(index)
+      move(index, current_player())
+      display_board()
     else
-      turn(board)
+      turn()
     end
   end
 
-  def turn_count(board)
+  def turn_count()
     counter = 0
-    board.each do |position|
+    @board.each do |position|
       if (position != " ") && (position != "") &&  (position != nil)
         counter += 1
       end
@@ -70,7 +70,7 @@ class TicTacToe
   end
 
   def current_player()
-    if turn_count(board) % 2 == 0
+    if turn_count() % 2 == 0
       "X"
     else
       "O"
@@ -87,42 +87,42 @@ class TicTacToe
       position_2 = board[win_index_2]
       position_3 = board[win_index_3]
 
-      if position_1 == position_2 && position_2 == position_3 && position_taken?(board, win_index_1)
+      if position_1 == position_2 && position_2 == position_3 && position_taken?(win_index_1)
         win_combination
       end
     end
   end
 
   def full?()
-    [0,1,2,3,4,5,6,7,8].all?{|position| position_taken?(board, position)} #Why not board.all?
+    [0,1,2,3,4,5,6,7,8].all?{|position| position_taken?(position)}
   end
 
   def draw?()
-    !won?(board) && full?(board) == true
+    !won?() && full?() == true
   end
 
   def over?()
-    if won?(board) != nil
+    if won?() != nil
       true
-    elsif draw?(board) == true
+    elsif draw?() == true
       true
-    else full?(board) == false
+    else full?() == false
       false
     end
   end
 
   def winner()
-    if won?(board) != nil
-      won = won?(board)
+    if won?() != nil
+      won = won?()
       return board[won[0]]
     end
   end
 
   def play()
-    until over?(board)
-      turn(board)
+    until over?()
+      turn()
     end
-    puts "Cats Game!" if draw?(board) #Why not add = true?
-    puts "Congratulations #{winner(board)}!" if won?(board)
+    puts "Cat's Game!" if draw?()
+    puts "Congratulations #{winner()}!" if won?()
   end
 end

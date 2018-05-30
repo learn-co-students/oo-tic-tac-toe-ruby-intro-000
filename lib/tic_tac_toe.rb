@@ -23,6 +23,7 @@ class TicTacToe
 ] #This is the array containing all of the winning combinations of moves
 
 def display_board
+  puts "\n"
   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
   puts "-----------"
   puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
@@ -75,7 +76,7 @@ end
 # not valid it will simply ask them for a new move.
 ##
 def turn
-  puts "Please enter 1-9:"
+  puts "\nPlease enter 1-9:\n"
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(index)

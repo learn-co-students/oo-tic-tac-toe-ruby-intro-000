@@ -1,3 +1,8 @@
+require 'simplecov'
+SimpleCov.start do
+  add_filter "/spec"
+end
+
 require_relative "../lib/tic_tac_toe.rb"
 
 RSpec.configure do |config|

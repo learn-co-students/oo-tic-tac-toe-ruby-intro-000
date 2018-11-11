@@ -38,4 +38,9 @@ def input_to_index(d)
   return digit
 end
 
+# Allows the player to make a move
+def move(index, token = 'X')
+  @board[index] = token
+end
+
 end

@@ -48,4 +48,15 @@ def position_taken?(index)
   (@board[index] == " ") || (@board[index] == "") || (@board[index] == nil) ? false : true
 end
 
+# Checks to see if the move submitted by the user is valid
+def valid_move?(index)
+  if index.between?(0,8)
+    if !position_taken?(index)
+      true
+    else
+      false
+    end
+  end
+end
+
 end

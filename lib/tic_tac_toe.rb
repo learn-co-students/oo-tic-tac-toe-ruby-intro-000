@@ -43,4 +43,9 @@ def move(index, token = 'X')
   @board[index] = token
 end
 
+# Checks to see if the given board position is available
+def position_taken?(index)
+  (@board[index] == " ") || (@board[index] == "") || (@board[index] == nil) ? false : true
+end
+
 end

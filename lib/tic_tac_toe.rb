@@ -65,4 +65,9 @@ def turn_count
   turns
 end
 
+# Determines whose turn it is to go
+def current_player
+  turn_count.even? ? "X" : "O"
+end
+
 end

@@ -70,4 +70,17 @@ def current_player
   turn_count.even? ? "X" : "O"
 end
 
+# Allows the user to take a turn
+def turn
+  puts "Please enter 1-9:"
+  input = gets
+  go = input_to_index(input)
+  if valid_move?(go)
+    move(go, current_player)
+    display_board
+  else
+    turn
+  end
+end
+
 end

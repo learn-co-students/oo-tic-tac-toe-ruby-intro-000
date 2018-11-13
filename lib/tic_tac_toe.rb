@@ -59,4 +59,10 @@ def valid_move?(index)
   end
 end
 
+# Gets the number of turns played
+def turn_count
+  turns = @board.count { |i| i == 'X' || i == 'O' }
+  turns
+end
+
 end

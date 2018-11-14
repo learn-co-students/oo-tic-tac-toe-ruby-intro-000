@@ -116,4 +116,9 @@ def full?
    @board.all? { |x| x == "X" || x == "O" }  
 end
 
+# Checks to see if there's a draw
+def draw?
+  !won? && full?
+end
+
 end

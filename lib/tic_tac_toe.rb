@@ -83,4 +83,32 @@ def turn
   end
 end
 
+# Checks to see if there's a winning combination
+def won?
+  win_combo = nil
+
+  count_letter = lambda do |arr, letter| 
+    true if arr.count(letter) === 3
+  end
+
+  if @board.count { |x| x == " "} == 9
+    false
+
+  else
+
+    WIN_COMBINATIONS.each do |combo|
+      positions = [ @board[combo[0]], @board[combo[1]], @board[combo[2]] ]
+      if count_letter[positions, "O"] 
+        win_combo = combo
+      elsif count_letter[positions, "X"] 
+        win_combo = combo
+      else
+        false
+      end
+    end
+
+  end
+  return win_combo
+end
+
 end

@@ -121,4 +121,13 @@ def draw?
   !won? && full?
 end
 
+# Determines if the game is over
+def over?
+  if won? || draw? || full?
+    true
+  else
+    false
+  end
+end
+
 end

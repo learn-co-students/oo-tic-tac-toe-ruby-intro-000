@@ -111,4 +111,9 @@ def won?
   return win_combo
 end
 
+# Determines if the board is full
+def full?
+   @board.all? { |x| x == "X" || x == "O" }  
+end
+
 end

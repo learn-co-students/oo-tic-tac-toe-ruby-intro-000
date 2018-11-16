@@ -149,4 +149,17 @@ def winner
   return winner
 end
 
+# Define the main method for the game
+def play
+  congrats = Proc.new { |player| puts "Congratulations #{player}!" }
+  tie = Proc.new { puts "Cat's Game!" }
+  
+  until over?
+    turn
+  end
+
+  congrats.call(winner) if won?
+  tie.call if draw?
+end
+
 end

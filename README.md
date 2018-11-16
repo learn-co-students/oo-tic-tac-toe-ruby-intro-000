@@ -114,6 +114,14 @@ Build a method `valid_move?` that accepts a position to check and returns `true`
 1. Present on the game board.
 2. Not already filled with a token.
 
+#### `#turn_count`
+
+This method returns the number of turns that have been played based on the `@board` variable.
+
+#### `#current_player`
+
+The `#current_player` method should use the `#turn_count` method to determine if it is `"X"`'s or `"O"`'s turn.
+
 #### `#turn`
 
 Build a method `#turn` to encapsulate the logic of a single complete turn composed of the following routine:
@@ -139,14 +147,6 @@ else
   ask for input again
 end
 ```
-
-#### `#turn_count`
-
-This method returns the number of turns that have been played based on the `@board` variable.
-
-#### `#current_player`
-
-The `#current_player` method should use the `#turn_count` method to determine if it is `"X"`'s or `"O"`'s turn.
 
 #### `#won?`
 

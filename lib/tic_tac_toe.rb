@@ -1,3 +1,9 @@
+
+##easier the second time around.  needed to rewrite the winner method to facilitate returning the
+## combo and also congratulate the winner
+
+
+
 class TicTacToe
   def initialize(board = nil)
     @board = board || Array.new(9," ")
@@ -14,12 +20,12 @@ class TicTacToe
     [6,4,2]
   ]
 
-  def display_board(board)
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  def display_board
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
   def input_to_index(input)
@@ -27,81 +33,75 @@ class TicTacToe
   end
 
 
-  def move(array, index, value)
-  array[index] = value
+  def move(index, value)
+    @board[index] = value
   end
 
-  def position_taken?(array, index)
-    if array[index] == " " || array[index] == ""
+  def position_taken?(index)
+    if @board[index] == " " || @board[index] == ""
       false
-    elsif array[index] == nil
+    elsif @board[index] == nil
       false
     else
       true
     end
   end
 
-  def valid_move?(array, index)
+  def valid_move?(index)
     if index.between?(0,8)
-      if position_taken?(array, index) == false
+      if position_taken?(index) == false
         true
       end
     end
   end
 
-  def turn(board)
+  def turn_count
+    return @board.count("X") + @board.count("O")
+  end
+
+  def turn
     puts "Please enter 1-9:"
     input = gets
-    input_to_index(input)
     index = input_to_index(input)
-    value = current_player(board)
-      if valid_move?(board, index)
-        move(board, index, value)
-        display_board(board)
+    value = current_player
+      if valid_move?(index)
+        move(index, value)
+        display_board
       else
-      ##  puts "Invalid move, please select again"
-      ##  display_board(board)
-        turn(board)
+        turn
       end
   end
 
-  def turn_count(board)
-    return board.count("X") + board.count("O")
-  end
-
-  def current_player(board)
-    turn_count(board)
-    if board.count(" ") == 9
+  def current_player
+    turn_count
+    if @board.count(" ") == 9
       return "X"
     end
-    if board.count(" ").even?
+    if @board.count(" ").even?
       return "O"
     else
       return "X"
     end
   end
 
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |combo|
-        win_index_1 = combo[0]
-        win_index_2 = combo[1]
-        win_index_3 = combo[2]
-
-        position_1 = board[win_index_1]
-        position_2 = board[win_index_2]
-        position_3 = board[win_index_3]
+        position_1 = @board[combo[0]]
+        position_2 = @board[combo[1]]
+        position_3 = @board[combo[2]]
 
         if position_1 == "X" && position_2 == "X" && position_3 == "X"
-          return true
+        return combo
+
        elsif position_1 == "O"  && position_2 == "O" && position_3 == "O"
-          return true
+        return combo
         end
     end
     return false
   end
 
-  def full?(board)
-    board.select do |space|
+  def full?
+    @board.select do |space|
       if space == " "
         return false
       end
@@ -109,9 +109,8 @@ class TicTacToe
   return true
   end
 
-  def draw?(board)
-    if won?(board) == false && full?(board) == true
-        puts "Cat's Game!"
+  def draw?
+    if won? == false && full? == true
         return true
       else
         return false
@@ -119,48 +118,45 @@ class TicTacToe
       return false
   end
 
-  def over?(board)
-    draw?(board)
-    won?(board)
-    full?(board)
-    if draw?(board) || full?(board) || won?(board)
+  def over?
+    draw?
+    won?
+    full?
+    if draw? || full? || won?
       return true
     end
     return false
   end
 
-  def winner(board)
-      if won?(board)
-        if board.count("X") > board.count("O")
-          puts "Congratulations X!"
-          return "X"
-        else
-          puts "Congratulations O!"
-          return "O"
+  def winner
+    WIN_COMBINATIONS.each do |combo|
+        position_1 = @board[combo[0]]
+        position_2 = @board[combo[1]]
+        position_3 = @board[combo[2]]
+
+        if position_1 == "X" && position_2 == "X" && position_3 == "X"
+        return "X"
+
+       elsif position_1 == "O"  && position_2 == "O" && position_3 == "O"
+        return "O"
         end
-      end
-  end
-
-  def play(board)
-    while over?(board) == false
-      turn(board)
     end
-    if won?(board) == true
-      winner(board)
-    end
-    if over?(board)
-      if draw?(board)
-        draw?(board)
-      end
-    end
+    return nil
   end
 
 
 
-
-
-
-
-
-
+  def play
+    while over? == false
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    end
+    if over?
+      if draw?
+        puts "Cat's Game!"
+      end
+    end
+  end
 end

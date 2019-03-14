@@ -1,3 +1,4 @@
+
 class TicTacToe
 
   def initialize(board = nil)
@@ -31,6 +32,7 @@ class TicTacToe
     user_input.to_i - 1
   end
 
+
   def move(index, player = "X")
     @board[index] = player
   end
@@ -60,6 +62,7 @@ class TicTacToe
       index = input_to_index(input)
     end
     move(index,current_player)
+
     display_board
 
   end
@@ -98,21 +101,21 @@ class TicTacToe
   end
  end
 
-def draw?
-  if won? && (full?|| !full?)
-    return false
-  elsif !won? && full?
-    return true
-  end
-end
+ def draw?
+   if won? && (full?|| !full?)
+     return false
+   elsif !won? && full?
+     return true
+   end
+ end
 
-def over?
-  if  won? || draw?
-    return true
-  else
-    return false
-  end
-end
+ def over?
+   if  won? || draw?
+     return true
+   else
+     return false
+   end
+ end
 
 def winner
 
@@ -141,6 +144,8 @@ def play
     print "Congratulations #{winner}!"
   end
 
+  end
+end
 
-end
-end
+tictactoe = TicTacToe.new("board")
+tictactoe.play

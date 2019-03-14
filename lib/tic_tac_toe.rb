@@ -144,6 +144,3 @@ def play
 
 end
 end
-
-tictactoe = TicTacToe.new("board")
-tictactoe.play

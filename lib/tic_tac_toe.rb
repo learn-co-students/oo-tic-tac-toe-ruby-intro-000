@@ -1,3 +1,5 @@
+require 'pry'
+
 class TicTacToe
 
   def initialize(board = nil)
@@ -71,6 +73,47 @@ class TicTacToe
 
   def won?
 
+    WIN_COMBINATIONS.each do |winning_positions|
+      if winning_positions.all? {|game_square| @board[game_square] == "X"} || winning_positions.all? {|game_square| @board[game_square] == "O"}
+        return winning_positions
+      end
+    end
+     false
+  end
+
+  def full?
+    @board.all? {|game_square| game_square != " "}
+  end
+
+  def draw?
+    full? && !won?
+  end
+
+  def over?
+    draw? || won?
+  end
+
+  def winner
+    if won? && current_player == "O"
+      return "X"
+    elsif won? && current_player == "X"
+      return "O"
+    else
+      nil
+    end
+  end
+
+  def play
+    until over? do
+      turn
+    end
+      if winner == "X"
+        puts "Congratulations X!"
+      elsif winner == "O"
+        puts "Congratulations O!"
+      elsif draw?
+        puts "Cat's Game!"
+      end
   end
 
 end

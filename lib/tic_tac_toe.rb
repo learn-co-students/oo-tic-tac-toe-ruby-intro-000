@@ -38,16 +38,16 @@ class TicTacToe
 
     #Sets the position of the board to "X" or "O"
     def move (index, token)
-      #token = current_player(board)
+  
       @board[index] = token
     end
 
-    #returns true if a space on the board is occupied
+
     def position_taken?(location)
       @board[location] != " " && @board[location] != ""
     end
 
-    #returns true if a move is valid
+
     def valid_move?(index)
       index.between?(0,8) && !position_taken?(index)
     end

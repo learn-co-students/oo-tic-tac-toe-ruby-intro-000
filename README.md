@@ -129,17 +129,30 @@ All these procedures will be wrapped into our `#turn` method. However, the major
 You can imagine the pseudocode for the `#turn` method:
 
 ```
+until the game is over
+  take turns
+end
 ask for input
 get input
 translate input into index
 if index is valid
   make the move for index
+  
+  check if it is a winning move or not
+  if the game was won 
+  congratulate the winner
+else if the game was a draw
+  tell the players it ended in a draw
+end  
   show the board
 else
   ask for input again
 end
-```
 
+
+
+
+```
 #### `#turn_count`
 
 This method returns the number of turns that have been played based on the `@board` variable.

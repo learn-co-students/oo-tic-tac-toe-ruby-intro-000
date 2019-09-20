@@ -17,7 +17,10 @@ The following example game is won by the first player, X:
 - Ruby
 
 ## Instructions:
-To play Tic-tac-toe, cd into the /bin directory and run the main.rb file. e.g. ruby main.rb
+To play Tic-tac-toe:
+* clone or download this project [from github](https://github.com/Anna-Myzukina/Tic-Tac-Toe-OOP)
+* cd into the /bin directory
+* run the main.rb file,using command: ruby main.rb
 
 ## Authors:
 

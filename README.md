@@ -19,7 +19,7 @@ Xs and Os is a paper-and-pencil game for two players, X and O, who take turns ma
 The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
 The following example game is won by the first player, X:
-![example](https://en.wikipedia.org/wiki/Tic-tac-toe#/media/File:Tic-tac-toe-game-1.svg)
+![example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/1280px-Tic-tac-toe-game-1.svg.png)
 Players take turns marking the spaces in a 3×3 grid.
 
 The player who succeeds in placing three of their marks in a

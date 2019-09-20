@@ -1,5 +1,6 @@
 # OO Tic Tac Toe
 
+![Game](https://imgflip.com/gif-maker)
 ## Objectives
 
 1. Build a CLI Tic Tac Toe game!

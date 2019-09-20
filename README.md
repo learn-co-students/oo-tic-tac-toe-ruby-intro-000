@@ -1,6 +1,6 @@
 # OO Tic Tac Toe
 
-![Game](https://imgflip.com/gif-maker)
+![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2cc2.gif)
 ## Objectives
 
 1. Build a CLI Tic Tac Toe game!

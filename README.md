@@ -1,6 +1,6 @@
 # OO Tic Tac Toe
 ## Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
-![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2cc2.gif)
+![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2hbp.gif)
 
 ## Game Rule:
 Tic Tac Toe is a Cool Math Games: 

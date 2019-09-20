@@ -1,5 +1,6 @@
-# OO Tic Tac Toe
-## Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
+# Tic Tac Toe OOP (Object Oriented Programming)
+* Original project specification at [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
+* Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 ![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2hm4.gif)
 
 ## Game Rule:
@@ -23,7 +24,8 @@ To play Tic-tac-toe:
 * run the main.rb file,using command: ruby main.rb
 
 ## Authors:
-
+* [Nick Haras](https://github.com/macnick)
+* [Anna Myzukina](https://github.com/Anna-Myzukina)
 ------------------------------------------------------------------------------
 
 

@@ -1,7 +1,7 @@
 # Tic Tac Toe OOP (Object Oriented Programming)
 * Original project specification at [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 * Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
-![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2hm4.gif)
+* ![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2hm4.gif)
 
 ## Game Rule:
 Tic Tac Toe is a Cool Math Games: 

@@ -1,30 +1,17 @@
 # OO Tic Tac Toe
 ## Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 ![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2cc2.gif)
-## Objectives
 
-1. Build a CLI Tic Tac Toe game!
-2. Encapsulate Tic Tac Toe in a `TicTacToe` object.
-
-## Overview
-
-You're going to be building a 2 player CLI version of Tic Tac Toe by building a `TicTacToe` object. The game play will be very similar to other versions of TicTacToe.
-
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
-
------------------------------------------------------------------------------
 ## Game Rule:
 Tic Tac Toe is a Cool Math Games: 
-Xs and Os is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
-The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+Xs and Os is a paper-and-pencil game for two players, X and O:
+* Players take turns marking the spaces in a 3×3 grid.
+* The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+
 
 The following example game is won by the first player, X:
 ![example](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tic-tac-toe-game-1.svg/1280px-Tic-tac-toe-game-1.svg.png)
-Players take turns marking the spaces in a 3×3 grid.
 
-The player who succeeds in placing three of their marks in a
-
-horizontal, vertical, or diagonal row wins the game.
 
 ## Technologies:
 - Ruby
@@ -37,7 +24,14 @@ To play Tic-tac-toe, cd into the /bin directory and run the main.rb file. e.g. r
 ------------------------------------------------------------------------------
 
 
+1. Build a CLI Tic Tac Toe game!
+2. Encapsulate Tic Tac Toe in a `TicTacToe` object.
 
+## Overview
+
+You're going to be building a 2 player CLI version of Tic Tac Toe by building a `TicTacToe` object. The game play will be very similar to other versions of TicTacToe.
+
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
 
 ## Instructions
 

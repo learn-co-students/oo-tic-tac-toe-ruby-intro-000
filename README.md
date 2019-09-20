@@ -11,6 +11,29 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4TMZ0f6qoI" frameborder="0" allowfullscreen></iframe>
 
+-----------------------------------------------------------------------------
+## Game Rule:
+Tic Tac Toe at Cool Math Games: Play the classic game of X's and O's for 2 players
+
+Players take turns marking the spaces in a 3×3 grid.
+
+The player who succeeds in placing three of their marks in a
+
+horizontal, vertical, or diagonal row wins the game.
+
+## Technologies:
+- Ruby
+
+## Instructions:
+To play Tic-tac-toe, cd into the /bin directory and run the main.rb file. e.g. ruby main.rb
+
+## Authors:
+
+------------------------------------------------------------------------------
+
+
+
+
 ## Instructions
 
 **Run `bundle` within this lab's directory before getting started.**

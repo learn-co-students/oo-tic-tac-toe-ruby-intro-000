@@ -1,5 +1,5 @@
 # OO Tic Tac Toe
-
+## Tic-tac-toe [From Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)
 ![Game](https://github.com/Anna-Myzukina/oo-tic-tac-toe-ruby-intro-000/blob/master/3b2cc2.gif)
 ## Objectives
 
@@ -14,8 +14,12 @@ You're going to be building a 2 player CLI version of Tic Tac Toe by building a 
 
 -----------------------------------------------------------------------------
 ## Game Rule:
-Tic Tac Toe at Cool Math Games: Play the classic game of X's and O's for 2 players
+Tic Tac Toe is a Cool Math Games: 
+Xs and Os is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3×3 grid.
+The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
+The following example game is won by the first player, X:
+![example](https://en.wikipedia.org/wiki/Tic-tac-toe#/media/File:Tic-tac-toe-game-1.svg)
 Players take turns marking the spaces in a 3×3 grid.
 
 The player who succeeds in placing three of their marks in a

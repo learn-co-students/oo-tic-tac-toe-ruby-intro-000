@@ -153,7 +153,11 @@ Build a method `#turn` to encapsulate the logic of a single complete turn compos
 
 All these procedures will be wrapped into our `#turn` method. However, the majority of the logic for these procedures will be defined and encapsulated in individual methods that you've already built.
 
-You can imagine the pseudocode for the `#turn` method:
+You can imagine the pseudocode for the `#turn` method
+
+#### `#turn_count`
+
+This method returns the number of turns that have been played based on the `@board` variable.
 
 ```
 until the game is over
@@ -180,9 +184,6 @@ end
 
 
 ```
-#### `#turn_count`
-
-This method returns the number of turns that have been played based on the `@board` variable.
 
 #### `#current_player`
 

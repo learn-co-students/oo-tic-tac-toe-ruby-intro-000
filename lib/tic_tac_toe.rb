@@ -84,4 +84,87 @@ class TicTacToe
       end
     end
   end
+
+  def won?
+    if @board.include?("X") || @board.include?("O")
+      count=0
+      WIN_COMBINATIONS.each do |win_combo|
+        #binding.pry #sets each variable in WIN_COMBINATIONS to a single variable
+        win_1=win_combo[0]
+        win_2=win_combo[1]
+        win_3=win_combo[2]
+        if @board[win_1] == "X" && @board[win_2] == "X" && @board[win_3] == "X"
+          return win_combo
+        elsif @board[win_1]=="O" && @board[win_2]=="O" && @board[win_3]=="O"
+
+          return win_combo
+        else
+          count+=1
+        end
+      end
+      if count==@board.length()
+        return false
+      end
+    else
+      count=0
+      (0..@board.length()).each do |i|
+        if position_taken?(i)
+          count+=1
+        end
+      end
+      if count==@board.length()
+        return false
+      end
+    end
+  end
+
+  def full?
+    if !won?
+      count=0
+      @board.each do |position|
+        if position=="X" || position=="O"
+          count+=1
+        end
+      end
+      if count==@board.length()
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
+
+  def draw?
+    if full?
+      return true
+    else
+      return false
+    end
+  end
+
+  def over?
+    if draw? || won?
+      return true
+    else
+      if !full?
+        return false
+      end
+    end
+  end
+
+  def winner
+    if won?
+      won?.each do |position|
+        if @board[position]=="X"
+          return "X"
+        else
+          return "O"
+        end
+      end
+    else
+      return nil
+    end
+  end
 end

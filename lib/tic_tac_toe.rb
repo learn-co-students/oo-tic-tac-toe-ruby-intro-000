@@ -34,4 +34,30 @@ class TicTacToe
   def move(index,token="X")
     @board[index]=token
   end
+
+  def position_taken?(index)
+    !(@board[index].nil? || @board[index] == " ")
+  end
+
+  def valid_move?(index)
+    if index <=8 && index >=0
+      if !position_taken?(index)
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
+
+  def turn_count
+    turn_count=0
+    @board.each do |position|
+      if position=="X" || position=="O"
+        turn_count+=1
+      end
+    end
+    return turn_count
+  end
 end

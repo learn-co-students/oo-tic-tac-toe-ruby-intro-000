@@ -55,7 +55,7 @@ class TicTacToe
       move(index, current_player)
       display_board
     else
-      puts "invalid move"
+      puts "invalid move, please try again."
       turn
     end
   end
@@ -94,21 +94,17 @@ class TicTacToe
   end
 
   def full?
-    @board.all? { |token| token = "X" || token = "O" }
+    @board.all? { |token| token == "X" || token == "O" }
   end
 
   def draw?
     if full? && !won?
       return true
-    elsif !full? && !won?
-      return false
-    elsif won?
-      return false
     end
   end
 
   def over?
-    if won? || full?
+    if won? || draw?
       return true
     else
       return false
@@ -116,16 +112,8 @@ class TicTacToe
   end
 
   def winner
-    index = []
-    index = won?
-    if index == false
-      return nil
-    else
-      if @board[index[0]] = "X"
-        return "X"
-      else
-        return "O"
-      end
+    if won?
+      return @board[won?[0]]
     end
   end
 
@@ -135,7 +123,7 @@ class TicTacToe
     end
     if won?
       puts "Congratulations #{winner}!"
-    elsif draw?
+    else
       puts "Cat's Game!"
     end
   end

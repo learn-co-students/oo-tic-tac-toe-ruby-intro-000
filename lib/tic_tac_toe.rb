@@ -15,11 +15,11 @@ WIN_COMBINATIONS =[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[6,4,
    
    
   def display_board
-   puts " #{board[0]} | #{board[1]} | #{board[2]} "
+   puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
    puts "-----------"
-   puts " #{board[3]} | #{board[4]} | #{board[5]} "
+   puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
    puts "-----------"
-   puts " #{board[6]} | #{board[7]} | #{board[8]} "
+   puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
 end
  
  def input_to_index(int)
@@ -77,9 +77,9 @@ def turn
     puts "please choose your position between 1-9"
     input = gets.chomp
     index=input_to_index(input)
-    if valid_move?(index) == true
-       current_player
-       move(index)
+    if valid_move?(index)
+       
+       move(index,current_player)
        @board = board
        display_board = @board
        return  display_board
@@ -88,12 +88,16 @@ def turn
     input = gets.chomp
     index=input_to_index(input)
       if valid_move?(index) == true
-      current_player
-       move(index)
+      
+       move(index,current_player)
        @board = board
        display_board = @board
        return  display_board
      else
+        @board = board
+       display_board = @board
+      
+       #binding.pry
        turn
        end 
      

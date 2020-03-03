@@ -1,0 +1,19 @@
+def play
+  
+      turn
+      #binding.pry
+   if over? == true
+      if winner == "X"
+        puts "congratulate X the winner"
+      elsif winner == "O"
+        puts "congratulate O the winner"
+      elsif draw? == true
+       puts  "Cat\'s Game!"
+     end
+   else 
+     
+    while over? == false
+        turn
+      end
+    end  
+end

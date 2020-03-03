@@ -80,26 +80,14 @@ def turn
     if valid_move?(index)
        
        move(index,current_player)
-       @board = board
-       display_board = @board
-       return  display_board
+      
+       display_board 
+       
     else
-     puts "please choose your position between 1-9"
-    input = gets.chomp
-    index=input_to_index(input)
-      if valid_move?(index) == true
-      
-       move(index,current_player)
-       @board = board
-       display_board = @board
-       return  display_board
-     else
-        @board = board
-       display_board = @board
-      
-       #binding.pry
+    
        turn
-       end 
+     
+     
      
        
      end
@@ -126,25 +114,20 @@ def won?
  if board.none?{|i| i != " "}
  return false
  end
-  
-  
-  if board[0] == "X" && board[1]== "X" && board[2]== "X"
-    return    WIN_COMBINATIONS[0]
-   elsif board[3] == "X" && board[4] == "X" && board[5]== "X"
-    return  WIN_COMBINATIONS[1]
-   elsif board[6] == "X" && board[7] == "X" && board[8]== "X"
-     return  WIN_COMBINATIONS[2]
-   elsif board[0] == "O" && board[3] == "O" && board[6]== "O" 
-     return  WIN_COMBINATIONS[3]
-   elsif board[1] == "O" && board[4] == "O" && board[7]== "O" 
-     return WIN_COMBINATIONS[4]
-   elsif board[2] == "O" && board[5] == "O" && board[8]== "O" 
-     return WIN_COMBINATIONS[5]
-   elsif board[0] == "X" && board[4] == "X" && board[8]== "X" 
-     return WIN_COMBINATIONS[6]
-    elsif board[6] == "O" && board[4] == "O" && board[2]== "O"  
-     return WIN_COMBINATIONS[7]
+  WIN_COMBINATIONS.each do |i| 
+    first = i[0]
+    secound = i[1]
+    third = i[2]
+    if board[first] == "X" && board[secound]== "X" && board[third]== "X"
+    return    i
+  elsif
+     board[first] == "O" && board[secound]== "O" && board[third]== "O"
+     return i
   end
+end
+  
+
+  return false
 end
 def full?
   if board.all?{|i| i!=" "} 
@@ -154,6 +137,7 @@ def full?
  end
  end
  def draw?
+  
   if full? == true  && won? == false
     return true
   else
@@ -162,9 +146,7 @@ def full?
   
 end
 def over?
-  if board.any?{|i| i == " "} 
-    return false
-  end
+  
  if won? != false || draw? == true 
      return true
    else  
@@ -175,34 +157,22 @@ def over?
 end
 def winner 
   if won? != false
-    if won? == WIN_COMBINATIONS[6]
-      
-   return "X"
- elsif won? == WIN_COMBINATIONS[4] 
-   return "O"
-   end
- else
-   nil
-  end
+ return board[won?[1]] 
+ end
 end
-
 def play
-  
-      turn
-      #binding.pry
-   if over? == true
-      if winner == "X"
-        puts "congratulate X the winner"
-      elsif winner == "O"
-        puts "congratulate O the winner"
-      elsif draw? == true
-       puts  "Cat\'s Game!"
-     end
-   else 
-     
-    while over? == false
+ # binding.pry
+  while over? == false
         turn
       end
-    end  
-end
+      if winner == "X"
+        puts "Congratulations X!"
+      elsif winner == "O"
+        puts "Congratulations O!"
+     else 
+       puts  "Cat's Game!"
+     end
+   
+  end
+
 end

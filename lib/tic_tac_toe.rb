@@ -88,27 +88,10 @@ def turn
        turn
      
      
-     
-       
      end
 
     end  
-   #  puts "please choose a position between 1-9"
-    #input  = gets.chomp
-   # index = input_to_index(input)
-   # @board = initialize(board)
-    
-  # @board[index] = move(index,current_player)
    
-  
-    
-
-       
-     
-
-     
-
-
 
 def won?
  if board.none?{|i| i != " "}

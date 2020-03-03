@@ -1,4 +1,4 @@
-require "pry"
+#require "pry"
 class TicTacToe
   
   attr_accessor(:board,:win_combinations)
@@ -80,11 +80,16 @@ def turn
     if valid_move?(index)
        
        move(index,current_player)
+
       
        display_board 
        
-    else
+   
     
+
+       
+     else
+
        turn
      
      
@@ -135,8 +140,6 @@ def over?
    else  
     return false
    end
-
-  
 end
 def winner 
   if won? != false

@@ -1,5 +1,6 @@
 class TicTacToe
 def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
+  "Welcome to Tic Tac Toe!"
   @board = board
 end
 @winner = ""
@@ -72,12 +73,14 @@ def current_player
 end
 
 def turn (user_input = gets.strip)
+"Put a number 1-9"
 @user_input = user_input
 @user_move = input_to_index(@user_input)
 if valid_move?(@user_move)
   move(@user_move, current_player)
   display_board
 else
+  puts "Invalid move"
   turn
 end
 end
@@ -138,7 +141,7 @@ def winner
   end
 end
 
- def play 
+ def play
    until over?
      turn(@user_play = gets.strip)
    end

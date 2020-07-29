@@ -1,5 +1,5 @@
 class TicTacToe
-  
+
   def initialize(board = nil)
     @board = board || Array.new(9, " ")
   end
@@ -52,11 +52,7 @@ class TicTacToe
   end
 
   def current_player
-    if turn_count % 2 == 0
-      return "X"
-    else
-      return "O"
-    end
+    turn_count % 2 == 0 ? "X" : "O"
   end
 
   def turn
@@ -87,11 +83,7 @@ class TicTacToe
       end
     end
 
-    if winner.length == 3
-      return winner
-    else
-      return false
-    end
+    winner.length == 3 ? winner : false
   end
 
   def full?

@@ -1,7 +1,8 @@
 require_relative "../lib/tic_tac_toe.rb"
 
 class TicTacToe
-    def play
+=begin
+def play
         while turn_count <= 8
           turn
           if over? == true && winner != nil
@@ -17,7 +18,21 @@ class TicTacToe
   	def initialize(board = nil)
 	    @board = board || Array.new(9, " ")
 	  end
-	  
+=end
+
+def play
+    turn until over?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+  end
+
+def over?
+  won? || draw?
+end
+
+        	def initialize(board = nil)
+      	    @board = board || Array.new(9, " ")
+      	  end
+
 	  WIN_COMBINATIONS = [
 	      [0,1,2],
         [3,4,5],
@@ -72,6 +87,7 @@ class TicTacToe
         if valid_move?(@index) == true
           move(@index, current_player)
           display_board
+          
         else
          puts "your move is not valid, please try again"
          turn
@@ -158,7 +174,7 @@ def draw?
     end
 end
 
-
+=begin
 def over?
 
   if winner != nil
@@ -171,7 +187,7 @@ def over?
     false
   end
 end
-
+=end
 
     def winner
       WIN_COMBINATIONS.each do |win_combination|

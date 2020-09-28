@@ -62,12 +62,17 @@ class TicTacToe
   end
 
   def turn
-    puts "Choose a position: "
-    position = gets.strip
-    index = input_to_index(position)
+    flag = false
 
-    if valid_move?(index) == true
-      move(index, current_player())
+    until flag == true do
+      puts "Choose a position: "
+      position = gets.strip
+      index = input_to_index(position)
+
+      if valid_move?(index) == true
+        move(index, current_player)
+        flag = true
+      end
     end
 
     display_board()

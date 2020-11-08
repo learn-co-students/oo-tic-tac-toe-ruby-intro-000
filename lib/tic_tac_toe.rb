@@ -1,3 +1,4 @@
+require "pry"
 class TicTacToe
 
   def initialize
@@ -41,11 +42,8 @@ end
 end
 
 def valid_move?(index)
-if !position_taken?(index) && @board[index]
-  return true
-else
-  false
-end
+  index.between?(0, 8) && !position_taken?(index)
+
 end
 
 def turn_count
@@ -54,7 +52,6 @@ def turn_count
   @board.each do |turn|
     if turn == "X" || turn == "O"
       counter += 1
-      puts "#{counter}"
     end
   end
 
@@ -112,7 +109,7 @@ end
 
 def winner
 if winning_combo = won?
-  return   @board[winning_combo.first]
+  return  @board[winning_combo.first]
 end
 end
 
@@ -120,8 +117,7 @@ def play
   turn until over?
    if won?
   puts  "Congratulations #{winner}!"
-elsif
-   draw?
+else
   puts "Cat's Game!"
   end
 end

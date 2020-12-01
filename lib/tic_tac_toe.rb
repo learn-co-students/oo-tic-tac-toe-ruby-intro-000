@@ -52,11 +52,14 @@ def turn_count
   #  counts occupied positions
 
   @board.count do |turn|
+    binding.pry
     turn == "X" || turn == "O"
+    # @board.count {|square| square != " "}
   end
   end
 
   def current_player
+    #  turn_count.even? ? "X" : "O"
     if turn_count.even?
       "X"
     else

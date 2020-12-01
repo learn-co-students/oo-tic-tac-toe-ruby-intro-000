@@ -30,11 +30,14 @@ WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8
   end
 
   def position_taken?(user_input)
-    if @board[user_input] == " "
-      return false
-    else
-      return true
-    end
+    # if @board[user_input] == " "
+    #   return false
+    # else
+    #   return true
+    # end
+
+    @board[user_input] != " "
+
   end
 
 def valid_move?(index)

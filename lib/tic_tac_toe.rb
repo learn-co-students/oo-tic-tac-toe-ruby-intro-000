@@ -82,9 +82,8 @@ def turn_count
 
     WIN_COMBINATIONS.each do |combo|
       # binding.pry
-      if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
-        # && @board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O"
-        return combo[0], combo[1], combo[2]
+      if (@board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X") || (@board[combo[0]] == "O" && @board[combo[1]] == "O" && @board[combo[2]] == "O")
+        return combo
       end
       end
          return false
@@ -110,7 +109,7 @@ def turn_count
     end
 
     def over?
-      if @board == won? || full?
+      if won? || draw?
         return true
       end
     end
@@ -129,17 +128,18 @@ def turn_count
 
 
   def play
-    # binding.pry
-
-    user_input = gets.strip
-    index = input_to_index(user_input)
-
       until over?
-         return turn
+         turn
       end
 
-    until won?
-      puts "congratulations"
+      if winner == "X"
+        puts "Congratulations X!"
+    elsif winner == "O"
+      puts "Congratulations O!"
+    end
+
+    if draw?
+      puts "Cat's Game!"
     end
 
   end

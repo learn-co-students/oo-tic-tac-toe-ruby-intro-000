@@ -52,7 +52,6 @@ def turn_count
   #  counts occupied positions
 
   @board.count do |turn|
-    binding.pry
     turn == "X" || turn == "O"
     # @board.count {|square| square != " "}
   end
@@ -73,10 +72,10 @@ def turn_count
     index = input_to_index(user_input)
   if valid_move?(index)
     move(index,current_player)
-    display_board
   else
     turn
   end
+  display_board
   end
 
   def won?
@@ -93,7 +92,9 @@ def turn_count
     end
 
     def full?
-      # binding.pry
+
+    # @board.all?{|square| square != " " }
+
       @board.each do |game|
         # binding.pry
         if game != "X" && game != "O"
@@ -118,6 +119,11 @@ def turn_count
     end
 
     def winner
+
+    # if combo = won?
+    #   @board[combo[0]]
+    # end
+
       WIN_COMBINATIONS.each do |combo|
         # binding.pry
         if @board[combo[0]] == "X" && @board[combo[1]] == "X" && @board[combo[2]] == "X"
@@ -131,20 +137,24 @@ def turn_count
 
 
   def play
+
+# def play
+#   turn until over?
+#   puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+# end
+
       until over?
          turn
       end
 
-      if winner == "X"
+    if winner == "X"
         puts "Congratulations X!"
     elsif winner == "O"
       puts "Congratulations O!"
     end
-
     if draw?
       puts "Cat's Game!"
     end
-
   end
 
 
